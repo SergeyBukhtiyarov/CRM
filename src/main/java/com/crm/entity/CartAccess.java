@@ -1,4 +1,4 @@
-package com.crm;
+package com.crm.entity;
 
 import lombok.Data;
 
@@ -19,9 +19,8 @@ public class CartAccess {
     private boolean editable;//редактирование
     private boolean removed;//удаление
     @ManyToOne
-    private com.crm.Entity entity;//Сущность
-
+    private com.crm.entity.Entity entity;//Сущность
     @OneToMany
-    private List<CartGroupAccess> cartGroupAccessList;
+    private List<CartGroupAccess> cartGroupAccessList; //ссылка на связь группы доступа с Картами доступа
 
 }

@@ -1,4 +1,4 @@
-package com.crm;
+package com.crm.entity;
 
 import lombok.Data;
 
@@ -17,6 +17,6 @@ public class RuleSelectCart {
     private String name; //наименование
     private String sqlString;//запрос
     @OneToOne
-    private com.crm.Entity entity;
+    private com.crm.entity.Entity entity;// ссылка на Сущность
 
 }

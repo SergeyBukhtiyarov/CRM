@@ -1,4 +1,4 @@
-package com.crm;
+package com.crm.entity;
 
 import lombok.Data;
 
@@ -15,7 +15,7 @@ public class Role {
     private UUID roleId;
     private String name;//Наименование
     @OneToMany
-    private List<RoleGroupAccess> roleGroupAccessList;
+    private List<RoleGroupAccess> roleGroupAccessList;//ссылка на Группы доступа роли
     @OneToOne
-    private User user;
+    private User user;// ссылка на пользователя
 }

@@ -1,4 +1,4 @@
-package com.crm;
+package com.crm.entity;
 
 import lombok.Data;
 
@@ -22,14 +22,12 @@ public class User {
     private Date finishDate;//срок действия учетной записи
     private boolean isActive;//активен
     private boolean isNew;//новый пользователь
-
     @OneToOne
-    private Role role;//роль
+    private Role role;//ссылка на Роль
     @OneToOne
-    private Employee employee;//работник
-
+    private Employee employee;//ссылка на Работника
     @OneToMany
-    private List<UsersGroupAccess> usersGroupAccessList;
+    private List<UsersGroupAccess> usersGroupAccessList;// ссылка на Группы доступа пользователя
 
 
 }

@@ -1,4 +1,4 @@
-package com.crm;
+package com.crm.entity;
 
 import lombok.Data;
 
@@ -16,8 +16,8 @@ public class EntityAttr {
     private String name;//наименование
     private String systemName;//системное имя
     @ManyToOne
-    private com.crm.Entity entity;//сылка на сущность
+    private com.crm.entity.Entity entity;//сылка на сущность
     @OneToMany
-    private List<CartAccessAttr> cartAccessAttrList;
+    private List<CartAccessAttr> cartAccessAttrList;// ссылка на Карта доступа атрибута сущности
 
 }

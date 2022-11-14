@@ -1,4 +1,4 @@
-package com.crm;
+package com.crm.entity;
 
 import lombok.Data;
 
@@ -18,8 +18,8 @@ public class Entity {
     @OneToOne
     private RuleSelectCart ruleSelectCart;//ссылка на правило выбора карты доступа
     @OneToMany
-    private List<CartAccess> cartAccessList;
+    private List<CartAccess> cartAccessList;//ссылка на Карта доступа
     @OneToMany
-    private List<EntityAttr> entityAttrList;
+    private List<EntityAttr> entityAttrList;// ссылка на атрибуты сущности
 }
 

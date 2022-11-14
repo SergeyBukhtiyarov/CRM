@@ -1,4 +1,4 @@
-package com.crm;
+package com.crm.entity;
 
 import lombok.Data;
 
@@ -18,7 +18,7 @@ public class UsersGroupAccess {
     private UUID userId; //ссылка на пользователя userId
     private UUID groupAccessId;//ссылка на Группу доступа groupAccessId
     @ManyToOne
-    private  User user;
+    private  User user;//ссылка на Пользователя
     @ManyToOne
-    private GroupAccess GroupAccess;
+    private GroupAccess GroupAccess;// ссылка на Группа доступа
 }
