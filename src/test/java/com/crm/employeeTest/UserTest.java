@@ -168,6 +168,7 @@ public class UserTest {
         assertNotNull(entityAttrFromDB.getCartAccessAttr());
         CartAccessAttr cartAccessAttrFromDB = entityAttrFromDB.getCartAccessAttr();
         //check that cartAccessAttr have rule RightsUseRule with same sql string
+        //
         assertNotNull(cartAccessAttrFromDB.getRightsUseRule());
         assertEquals(
                 cartAccessAttrFromDB.getRightsUseRule().getSqlString(),
