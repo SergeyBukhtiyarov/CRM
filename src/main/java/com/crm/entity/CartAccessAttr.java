@@ -16,8 +16,8 @@ public class CartAccessAttr {
     private String name;//наименование
     private boolean readable;//чтение
     private boolean editable;//редактирование
-    @ManyToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private EntityAttr entityAttr;//ссылка на Атрибут сущности
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private RightsUseRule rightsUseRuleId;// ссылка на правило применения прав
 }

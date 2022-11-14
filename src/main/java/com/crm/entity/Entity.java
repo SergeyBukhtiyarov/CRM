@@ -16,10 +16,14 @@ public class Entity {
     private String name;//наименование
     private String systemName;//системное имя
     @OneToOne
+    @Transient
+    private CartAccess cartAccess;
+
+    @OneToOne(cascade = CascadeType.ALL)
     private RuleSelectCart ruleSelectCart;//ссылка на правило выбора карты доступа
-    @OneToMany
-    private List<CartAccess> cartAccessList;//ссылка на Карта доступа
-    @OneToMany
+//    @OneToMany
+//    private List<CartAccess> cartAccessList;//ссылка на Карта доступа
+    @OneToMany(mappedBy = "entity", cascade = CascadeType.ALL)
     private List<EntityAttr> entityAttrList;// ссылка на атрибуты сущности
 }
 

@@ -16,7 +16,7 @@ public class RuleSelectCart {
     private UUID ruleSelectCartId;
     private String name; //наименование
     private String sqlString;//запрос
-    @OneToOne
-    private com.crm.entity.Entity entity;// ссылка на Сущность
+//    @OneToOne
+//    private com.crm.entity.Entity entity;// ссылка на Сущность
 
 }

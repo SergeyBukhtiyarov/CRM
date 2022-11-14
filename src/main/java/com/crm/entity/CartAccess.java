@@ -18,9 +18,15 @@ public class CartAccess {
     private boolean readable;//чтение
     private boolean editable;//редактирование
     private boolean removed;//удаление
-    @ManyToOne
-    private com.crm.entity.Entity entity;//Сущность
-    @OneToMany
-    private List<CartGroupAccess> cartGroupAccessList; //ссылка на связь группы доступа с Картами доступа
+//    @ManyToOne
+//    private com.crm.entity.Entity entity;//Сущность
+//    @OneToMany
+//    private List<CartGroupAccess> cartGroupAccessList; //ссылка на связь группы доступа с Картами доступа
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @Transient
+    private List<GroupAccess> groupAccesses;
+    @OneToOne(cascade = CascadeType.ALL)
+    private com.crm.entity.Entity entity;
 
 }

@@ -14,8 +14,11 @@ public class Role {
     @GeneratedValue
     private UUID roleId;
     private String name;//Наименование
-    @OneToMany
-    private List<RoleGroupAccess> roleGroupAccessList;//ссылка на Группы доступа роли
-    @OneToOne
-    private User user;// ссылка на пользователя
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "roles", fetch = FetchType.EAGER)
+//    @Transient
+    private List<GroupAccess> groupAccesses;
+//    @ManyToMany
+//    private List<GroupAccess> groupAccesses;
+//    @OneToOne
+//    private User user;// ссылка на пользователя
 }

@@ -15,9 +15,9 @@ public class EntityAttr {
     private UUID entityAttrId;
     private String name;//наименование
     private String systemName;//системное имя
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private com.crm.entity.Entity entity;//сылка на сущность
-    @OneToMany
-    private List<CartAccessAttr> cartAccessAttrList;// ссылка на Карта доступа атрибута сущности
+//    @OneToMany
+//    private List<CartAccessAttr> cartAccessAttrList;// ссылка на Карта доступа атрибута сущности
 
 }

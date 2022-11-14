@@ -14,11 +14,14 @@ public class GroupAccess {
     @GeneratedValue
     private UUID groupAccessId;
     private String name;//наименование
-    @ManyToMany
-    private List<CartGroupAccess> cartGroupAccessList;// ссылка на связьГрупп доступа с Картами доступа
-    @OneToMany
-    private List<RoleGroupAccess> roleGroupAccessList;// ссылка на Группы доступа роли
-    @OneToMany
-    private List<UsersGroupAccess> userGroupAccessList;// ссылка на Группы доступа пользователя
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<User> users;
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Role> roles;
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<CartAccess> cartAccesses;
+//    @ManyToMany
+//    private List<CartGroupAccess> cartGroupAccessList;// ссылка на связьГрупп доступа с Картами доступа
+
 
 }

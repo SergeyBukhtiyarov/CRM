@@ -17,6 +17,6 @@ public class RightsUseRule {
     private UUID rightsUseRuleId;
     private String name;//наименование
     private  String sqlString;//запрос
-    @OneToOne
-    private CartAccessAttr cartAccessAttr;// ссылка на Карта доступа атрибута сущности
+//    @OneToOne
+//    private CartAccessAttr cartAccessAttr;// ссылка на Карта доступа атрибута сущности
 }
