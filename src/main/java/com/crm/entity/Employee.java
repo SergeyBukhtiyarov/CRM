@@ -2,11 +2,10 @@ package com.crm.entity;
 
 import lombok.Data;
 
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import java.util.UUID;
+
 //Работник
 @Entity
 @Data
@@ -20,6 +19,6 @@ public class Employee {
     private String midlName;//Отчество
     private String tel;//Телефон
     private String email;//E-mail
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private User user;//Ссылка на пользователя
 }

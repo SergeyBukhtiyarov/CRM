@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import java.util.UUID;
+
 //Правило выбора карты доступа к сущности
 @Entity
 @Data
@@ -16,7 +17,4 @@ public class RuleSelectCart {
     private UUID ruleSelectCartId;
     private String name; //наименование
     private String sqlString;//запрос
-    @OneToOne
-    private com.crm.entity.Entity entity;// ссылка на Сущность
-
 }

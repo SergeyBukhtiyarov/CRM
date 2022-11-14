@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 import java.util.List;
 import java.util.UUID;
+
 //Атрибут сущности
 @Entity
 @Data
@@ -15,9 +16,9 @@ public class EntityAttr {
     private UUID entityAttrId;
     private String name;//наименование
     private String systemName;//системное имя
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private com.crm.entity.Entity entity;//сылка на сущность
-    @OneToMany
-    private List<CartAccessAttr> cartAccessAttrList;// ссылка на Карта доступа атрибута сущности
-
+    @OneToOne(cascade = CascadeType.ALL)
+    @Transient
+    private CartAccessAttr cartAccessAttr;
 }

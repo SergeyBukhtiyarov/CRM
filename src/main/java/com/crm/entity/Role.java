@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 import java.util.List;
 import java.util.UUID;
+
 //Роль
 @Entity
 @Data
@@ -14,8 +15,6 @@ public class Role {
     @GeneratedValue
     private UUID roleId;
     private String name;//Наименование
-    @OneToMany
-    private List<RoleGroupAccess> roleGroupAccessList;//ссылка на Группы доступа роли
-    @OneToOne
-    private User user;// ссылка на пользователя
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "roles", fetch = FetchType.EAGER)
+    private List<GroupAccess> groupAccesses;
 }
