@@ -2,9 +2,9 @@ package com.crm;
 
 import lombok.Data;
 
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.util.List;
 import java.util.UUID;
 //Роль
 @Entity
@@ -14,4 +14,8 @@ public class Role {
     @GeneratedValue
     private UUID roleId;
     private String name;//Наименование
+    @OneToMany
+    private List<RoleGroupAccess> roleGroupAccessList;
+    @OneToOne
+    private User user;
 }

@@ -2,9 +2,9 @@ package com.crm;
 
 import lombok.Data;
 
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.util.List;
 import java.util.UUID;
 //Атрибут сущности
 @Entity
@@ -15,6 +15,9 @@ public class EntityAttr {
     private UUID entityAttrId;
     private String name;//наименование
     private String systemName;//системное имя
+    @ManyToOne
     private com.crm.Entity entity;//сылка на сущность
+    @OneToMany
+    private List<CartAccessAttr> cartAccessAttrList;
 
 }

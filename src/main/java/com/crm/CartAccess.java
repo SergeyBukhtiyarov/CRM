@@ -2,9 +2,9 @@ package com.crm;
 
 import lombok.Data;
 
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.util.List;
 import java.util.UUID;
 //Карта доступа
 @Entity
@@ -18,6 +18,10 @@ public class CartAccess {
     private boolean readable;//чтение
     private boolean editable;//редактирование
     private boolean removed;//удаление
+    @ManyToOne
     private com.crm.Entity entity;//Сущность
+
+    @OneToMany
+    private List<CartGroupAccess> cartGroupAccessList;
 
 }

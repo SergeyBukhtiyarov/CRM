@@ -2,9 +2,8 @@ package com.crm;
 
 import lombok.Data;
 
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.util.UUID;
 //Карта доступа атрибута сущности
 @Entity
@@ -17,6 +16,8 @@ public class CartAccessAttr {
     private String name;//наименование
     private boolean readable;//чтение
     private boolean editable;//редактирование
+    @ManyToOne
     private EntityAttr entityAttr;//ссылка на Атрибут сущности
-    private RightsUseRuleId rightsUseRuleId;// ссылка на правило применения прав
+    @OneToOne
+    private RightsUseRule rightsUseRuleId;// ссылка на правило применения прав
 }

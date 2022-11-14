@@ -2,9 +2,9 @@ package com.crm;
 
 import lombok.Data;
 
+import javax.persistence.*;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.util.List;
 import java.util.UUID;
 //Группа доступа
 @Entity
@@ -14,5 +14,11 @@ public class GroupAccess {
     @GeneratedValue
     private UUID groupAccessId;
     private String name;//наименование
+    @ManyToMany
+    private List<CartGroupAccess> cartGroupAccessList;
+    @OneToMany
+    private List<RoleGroupAccess> roleGroupAccessList;
+    @OneToMany
+    private List<UsersGroupAccess> userGroupAccessList;
 
 }
